@@ -270,5 +270,5 @@ This is not just a notebook project — it is a deployable product simulation.
 
 ## 👨‍💻 Author
 
-**Your Name**  
+**Akhil**  
 Data Scientist | Machine Learning Engineer 
