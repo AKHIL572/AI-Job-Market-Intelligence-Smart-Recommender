@@ -1,247 +1,274 @@
-💼 AI-Powered Job Market Intelligence & Smart Job Recommendation System
+# 💼 AI-Powered Job Market Intelligence & Smart Job Recommendation System
 
-End-to-End Data Science Project | Salary Prediction + Market Intelligence + Hybrid Job Recommender
-Built for Production | Business-Oriented | Interview-Ready
+An end-to-end Data Science project that transforms raw job posting data into actionable job market intelligence and delivers personalized job recommendations using Machine Learning & NLP.
 
-🚀 Project Overview
+---
 
-The AI Job Market Intelligence & Smart Recommendation System is an end-to-end data science solution that transforms raw job posting data into:
+## 🚀 Project Overview
 
-📊 Market insights & hiring trends
+This project simulates a real-world product used by job portals, HR tech companies, and workforce analytics firms.
 
-💰 Salary prediction engine
+It performs:
 
-🧠 In-demand skill intelligence
+- 📊 Job Market Intelligence Analysis  
+- 💰 Salary Prediction using ML  
+- 🔥 In-demand Skill Identification  
+- 📍 Hiring Hotspot Detection (City Trends)  
+- 🎯 AI-Powered Hybrid Job Recommendation Engine  
 
-📍 City-wise hiring hotspot detection
+The system combines:
 
-🎯 Hybrid job recommendation system
+- NLP (TF-IDF)
+- Machine Learning (Salary Prediction Model)
+- Hybrid Recommendation System (Content + Scoring Based)
+- Streamlit Production App Deployment
 
-This project simulates a real-world product built for job platforms like
-LinkedIn / Naukri / Indeed.
+---
 
-It combines:
+## 🏗️ Business Problem
 
-NLP (TF-IDF)
+Recruiters and job seekers face challenges such as:
 
-Machine Learning (Salary Regression)
+- Unstructured job postings
+- Salary transparency issues
+- Skill mismatch
+- Lack of data-driven career guidance
 
-Hybrid Recommendation System
+This project solves that by:
 
-Business Analytics
+1. Structuring raw job data
+2. Predicting fair salary ranges
+3. Identifying market-demanded skills
+4. Recommending personalized jobs based on:
+   - Skills
+   - Experience
+   - Salary alignment
+   - Location preference
 
-Explainable AI (XAI)
+---
 
-Streamlit Deployment
+## 🧠 System Architecture
 
-🏗️ System Architecture
+```
 Raw Job Dataset
-      ↓
+↓
 Data Cleaning & Feature Engineering
-      ↓
-TF-IDF Vectorization (Skills)
-      ↓
-Salary Prediction Model (Regression)
-      ↓
-Hybrid Scoring Engine
-      ↓
-Streamlit Web Application
-📊 Business Problems Solved
-1️⃣ Job Market Intelligence
+↓
+TF-IDF Skill Vectorization
+↓
+Salary Prediction Model (Log-Transformed Regression)
+↓
+Hybrid Recommendation Engine
+↓
+Streamlit Production App
 
-Identify top hiring cities
+```
+---
 
-Analyze experience vs salary trends
+## 📂 Project Structure
 
-Discover in-demand skills
-
-Detect industry hiring patterns
-
-2️⃣ Salary Prediction
-
-Predict expected salary based on:
-
-Skills
-
-Experience
-
-Role & industry features
-
-3️⃣ Smart Job Recommendation
-
-Hybrid recommender combining:
-
-Skill similarity (Cosine Similarity)
-
-Salary alignment
-
-Experience matching
-
-City preference
-
-🧠 Key Features
-
-✅ Salary prediction using ML regression
-✅ TF-IDF skill embedding
-✅ Cosine similarity-based job matching
-✅ Hybrid ranking model
-✅ Skill gap analysis
-✅ Explainable recommendation breakdown
-✅ Fully interactive Streamlit UI
-✅ Production-ready modular structure
-
-🗂️ Project Structure
-AI-Job-Market-Intelligence/
+```
+job_AI_system/
 │
 ├── dataset/
-│   └── analytics_jobs.csv
+│ ├── naukri_dataset.csv
+│ ├── naukri_cleaned.csv
+│ └── analytics_jobs.csv
 │
 ├── models/
-│   ├── salary_model.pkl
-│   ├── tfidf_vectorizer.pkl
-│   └── medians.pkl
+│ ├── salary_model.pkl
+│ ├── tfidf_vectorizer.pkl
+│ └── medians.pkl
 │
 ├── notebooks/
-│   ├── 1_data_understanding.ipynb
-│   ├── 2_exploratory_data_analysis.ipynb
-│   ├── 3_feature_engineering.ipynb
-│   ├── 4_salary_prediction_model.ipynb
-│   └── 5_job_recommendation_engine.ipynb
+│ ├── 1_data_understanding.ipynb
+│ ├── 2_exploratory_data_analysis.ipynb
+│ ├── 3_feature_engineering.ipynb
+│ ├── 4_salary_prediction_model.ipynb
+│ └── 5_job_recommendation_engine.ipynb
 │
 ├── app.py
 ├── requirements.txt
 └── README.md
-🛠️ Tech Stack
-Category	Tools
-Language	Python
-Data Processing	Pandas, NumPy
-Visualization	Matplotlib, Seaborn
-NLP	TF-IDF
-ML	Scikit-learn
-Similarity	Cosine Similarity
-Deployment	Streamlit
-Model Storage	Joblib
-📈 Hybrid Recommendation Formula
 
-Final Job Score:
+```
+---
 
-Final Score =
-0.50 × Skill Similarity +
-0.20 × Salary Alignment +
-0.15 × Experience Match +
-0.15 × City Preference
+## 📊 Key Features
 
-This ensures:
+### 1️⃣ Job Market Intelligence
 
-High relevance
+- Top hiring cities
+- Industry-wise demand
+- Role distribution analysis
+- Experience demand trends
+- Salary distribution insights
 
-Balanced personalization
+---
 
-Realistic salary expectations
+### 2️⃣ Salary Prediction Model
 
-Practical experience matching
+- Log-transformed salary regression
+- Feature engineered experience buckets
+- TF-IDF skill-based salary influence
+- Handles missing salary values
+- Production-ready serialized model
 
-💰 Salary Prediction Model
+**Output:**  
+Predicted fair annual salary for user profile.
 
-Target:
+---
 
-log(salary_avg)
+### 3️⃣ Hybrid Job Recommendation Engine
 
-Features:
+Uses a weighted scoring system:
 
-Experience (exp_avg)
+| Component        | Weight |
+|------------------|--------|
+| Skill Similarity | 50%    |
+| Salary Match     | 20%    |
+| Experience Match | 15%    |
+| City Match       | 15%    |
 
-Experience squared
+### Recommendation Logic:
 
-Experience bucket
+- Cosine similarity on TF-IDF skill vectors
+- Salary closeness scoring (exponential decay)
+- Experience gap normalization
+- Location preference matching
+- Final hybrid ranking score
 
-TF-IDF skill features
+---
 
-Output:
+### 4️⃣ Explainable AI
 
-Predicted annual salary (₹)
-🔍 Explainable AI (XAI)
+For each recommended job:
 
-For every recommendation, the system shows:
+- Skill Match %
+- Salary Match %
+- Experience Match %
+- Skill Gap Analysis (missing skills to learn)
 
-Skill Match %
+This makes the system transparent and recruiter-friendly.
 
-Salary Match %
+---
 
-Experience Match %
+## 🛠️ Tech Stack
 
-Missing Skills (Skill Gap Analysis)
+- **Python**
+- **Pandas, NumPy**
+- **Scikit-Learn**
+- **TF-IDF (NLP)**
+- **Cosine Similarity**
+- **Streamlit**
+- **Joblib**
 
-This makes recommendations transparent and recruiter-ready.
+---
 
-📊 Insights Extracted
+## 📈 Machine Learning Details
 
-Top hiring cities
+### Salary Model
 
-Salary growth curve by experience
+- Target: `log(salary_avg)`
+- Features:
+  - Experience
+  - Experience Squared
+  - Experience Bucket
+  - TF-IDF Skill Features
 
-Most in-demand analytics skills
+Why log transformation?
 
-Industry hiring trends
+- Reduces skewness
+- Handles salary outliers
+- Improves regression stability
 
-Experience distribution patterns
+---
 
-🖥️ Run Locally
-1️⃣ Clone Repository
+## 🎯 How to Run Locally
+
+### 1️⃣ Clone the repository
+
+
 git clone https://github.com/yourusername/AI-Job-Market-Intelligence.git
+
 cd AI-Job-Market-Intelligence
-2️⃣ Install Requirements
+
+
+### 2️⃣ Install dependencies
+
+
 pip install -r requirements.txt
-3️⃣ Run Streamlit App
+
+
+### 3️⃣ Run Streamlit app
+
+
 streamlit run app.py
-🎯 Why This Project Stands Out
 
-This is NOT a basic EDA + model project.
 
-It demonstrates:
+---
 
-Real-world problem framing
+## 💡 Example User Flow
 
-Feature engineering depth
+1. User enters:
+   - Skills: `python sql machine learning`
+   - Experience: `3 years`
+   - Preferred City: `Bangalore`
 
-NLP application
+2. System:
+   - Predicts suitable salary
+   - Calculates skill similarity
+   - Computes hybrid ranking
+   - Displays Top 10 jobs
+   - Suggests missing skills
 
-Hybrid recommender systems
+---
 
-Production-level architecture
+## 📊 Potential Business Impact
 
-Business metric thinking
+This system can be used by:
 
-Deployable ML system
+- Job portals (like Naukri/Indeed)
+- EdTech companies
+- HR analytics platforms
+- Workforce planning firms
 
-Clean modular design
+### Value Delivered:
 
-This project aligns with expectations from:
+- Personalized job recommendations
+- Data-driven salary insights
+- Career path guidance
+- Skill gap identification
+- Market trend intelligence
 
-Product-based companies
+---
 
-Analytics startups
+## 🔥 What Makes This Project Interview-Ready?
 
-Data science interview panels
+✔ End-to-End Pipeline  
+✔ NLP + ML Integration  
+✔ Hybrid Recommendation System  
+✔ Explainable AI  
+✔ Production Deployment  
+✔ Real Business Framing  
+✔ Clean Project Structure  
 
-ML Engineer roles
+This is not just a notebook project — it is a deployable product simulation.
 
-📌 Future Improvements
+---
 
-Deep learning embeddings (BERT for skills)
+## 📌 Future Improvements
 
-Collaborative filtering component
+- Deep Learning Embeddings (BERT-based skill matching)
+- Collaborative Filtering
+- Resume Parsing Integration
+- Real-time API deployment (FastAPI)
+- Dockerization
+- Cloud deployment (AWS/GCP/Azure)
 
-Real-time job scraping pipeline
+---
 
-Model retraining pipeline
+## 👨‍💻 Author
 
-Docker deployment
-
-Cloud deployment (AWS/GCP/Azure)
-
-👨‍💻 Author
-
-Your Name
-
-Data Science | Machine Learning | Analytics Engineering
+**Your Name**  
+Data Scientist | Machine Learning Engineer 
