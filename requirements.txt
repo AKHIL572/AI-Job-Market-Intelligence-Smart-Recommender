@@ -1,7 +1,23 @@
-streamlit
-pandas
-numpy
-scikit-learn
-joblib
-scipy
-xgboost
+# Pinned to the exact versions this project was built and tested against.
+# The original requirements.txt had no version pins at all — meaning a
+# fresh `pip install -r requirements.txt` months later could silently pull
+# incompatible versions and break the saved .pkl model/vectorizer files
+# (scikit-learn and xgboost are not guaranteed pickle-compatible across
+# versions). Exact pins trade a little flexibility for actually working.
+
+streamlit==1.61.1
+pandas==3.0.2
+numpy==2.4.4
+scikit-learn==1.8.0
+joblib==1.5.3
+scipy==1.17.1
+xgboost==3.4.0
+
+# Used in the notebooks (EDA, feature engineering, model evaluation) — not
+# runtime dependencies of app.py itself, but required to reproduce the full
+# pipeline end-to-end, which the original requirements.txt did not support.
+statsmodels==0.14.6
+matplotlib==3.10.8
+seaborn==0.13.2
+shap==0.52.0
+nbformat==5.10.4
