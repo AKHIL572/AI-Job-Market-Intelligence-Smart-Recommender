@@ -1,0 +1,56 @@
+{
+  "model_name": "XGBoost Regressor (Salary Prediction)",
+  "version": "1.0.0",
+  "task": "Regression (predicting annual log salary in INR)",
+  "target_variable": "log_salary (np.log(salary_avg))",
+  "evaluation_metrics": {
+    "test_r2_log": 0.686,
+    "test_rmse_log": 0.4174,
+    "test_mae_log": 0.3151,
+    "test_rmse_inr": 323975.0,
+    "test_mae_inr": 186912.0
+  },
+  "baseline_comparison": {
+    "median_predictor": {
+      "r2_log": -0.0423,
+      "rmse_inr": 558090.0,
+      "mae_inr": 339016.0
+    },
+    "mean_predictor": {
+      "r2_log": -0.0009,
+      "rmse_inr": 540242.0,
+      "mae_inr": 341772.0
+    },
+    "linear_regression": {
+      "r2_log": 0.6711,
+      "rmse_inr": 325499.0,
+      "mae_inr": 188213.0
+    },
+    "random_forest": {
+      "r2_log": 0.6613,
+      "rmse_inr": 329433.0,
+      "mae_inr": 191689.0
+    }
+  },
+  "training_data": {
+    "source": "Naukri Job Postings (2019)",
+    "train_samples": 6062,
+    "test_samples": 1515,
+    "leakage_prevention": "Train/test split performed before computing any outlier bounds, category frequencies, or TF-IDF representations"
+  },
+  "features": [
+    "exp_avg",
+    "exp_min",
+    "exp_max",
+    "city_group (one-hot)",
+    "role_group (one-hot)",
+    "industry_group (one-hot)",
+    "exp_bucket (one-hot)",
+    "top skill flags (TF-IDF derived)"
+  ],
+  "known_limitations": [
+    "Selection bias: Trained exclusively on ~26% of job postings with disclosed salaries.",
+    "Historical baseline: 2019 salary levels do not reflect current inflation or nominal market changes.",
+    "User industry/role are unobserved at runtime and defaulted to baseline reference categories."
+  ]
+}
